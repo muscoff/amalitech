@@ -1,25 +1,7 @@
 import React, {Component} from 'react';
+import MyContext from '../../MyContext';
 
 export default class ListItems extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            totalQty: 0,
-            totalPrice: 0,
-            discount: this.props.discount
-        };
-    }
-
-    componentDidMount(){
-        this.ID = setInterval(()=>{
-            this.props.setUp();
-        },100);
-        //setTimeout(()=>{this.props.setUp()},2000);
-    }
-
-    componentWillUnmount(){
-        clearInterval(this.ID);
-    }
 
     onMinus(index){
         this.props.onMinus(index);
@@ -115,7 +97,7 @@ export default class ListItems extends Component{
                                 <i onClick={()=>this.onMinus(index)} className="fas fa-minus-circle cursor-pointer shadow amali-blue font-30"></i>
                             </div>
                             <div className="col-2 col-l-5 col-m-8 col-s-8">
-                                <input onChange={(e)=>this.onChange(e, index)} type="text" defaultValue={item.qty} className="num" />
+                                <input onChange={(e)=>this.onChange(e, index)} type="text" value={item.qty} className="num" />
                             </div>
                             <div>
                                 <i onClick={()=>this.onPlus(index)} className="fas fa-plus-circle cursor-pointer shadow amali-blue font-30"></i>
@@ -130,7 +112,8 @@ export default class ListItems extends Component{
             );
         });
         return (
-            <div className="width-90 margin-auto">
+            <React.Fragment>
+                <div className="width-90 margin-auto">
                 <div className="row align-items-center">
                     <div className="col-9 col-l-12 col-m-12 col-s-12">{listItem}</div>
                     <div className="col-3 col-l-12 col-m-12 col-s-12">
@@ -146,6 +129,7 @@ export default class ListItems extends Component{
                 </div>
                 <div className="width-100 height-10"></div>
             </div>
+            </React.Fragment>
         );
     }
 }

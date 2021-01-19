@@ -18,6 +18,7 @@ class Product extends React.Component{
                                 </div>
                             </div>
                         </div>
+                        {window.addEventListener('scroll', ()=>{content.navScroll()})}
                     </React.Fragment>
                 )}
             </MyContext.Consumer>

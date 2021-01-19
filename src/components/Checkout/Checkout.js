@@ -8,18 +8,33 @@ export default class Checkout extends Component{
         super(props);
     }
 
+    componentDidMount(){
+        this.divBreak();
+    }
+
+    divBreak(){
+        let nav = document.querySelector('#navBar');
+        let height = nav.offsetHeight + 40;
+        let div = document.createElement('div');
+        div.style.height = height+'px';
+        div.style.width = 'width-100 green-bg';
+        document.querySelector('#break').appendChild(div);
+        console.log('executed', height);
+    }
+
     render(){
         return (
-            <React.Fragment>
+            <div id="body">
+            <div id="break"></div>
                 <MyContext.Consumer>
                     {(content)=>(
                         <React.Fragment>
-                            <ListItems onChange={content.onChange} onMinus={content.onMinus} onPlus={content.onPlus} cart={content.cart} setUp={content.setUp} totalPrice={content.totalPrice} totalQty={content.totalQty} cart={content.cart} removeItem={content.removeItem} onDiscount={content.discountAction} discount={content.discount} />
+                            <ListItems onChange={content.onChange} onMinus={content.onMinus} onPlus={content.onPlus} cart={content.cart} totalPrice={content.totalPrice} totalQty={content.totalQty} removeItem={content.removeItem} onDiscount={content.discountAction} discount={content.discount} />
                             <Footer />
-                    </React.Fragment>
+                        </React.Fragment>
                     )}
                 </MyContext.Consumer>
-            </React.Fragment>
+            </div>
         );
     }
 }

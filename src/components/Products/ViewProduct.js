@@ -13,6 +13,20 @@ class ViewProduct extends React.Component{
         };
     }
 
+    componentDidMount(){
+        this.divBreak();
+    }
+
+    divBreak(){
+        let nav = document.querySelector('#navBar');
+        let height = nav.offsetHeight + 50;
+        let div = document.createElement('div');
+        div.style.height = height+'px';
+        div.style.width = 'width-100 green-bg';
+        document.querySelector('#break').appendChild(div);
+        console.log('executed', height);
+    }
+
     onClick(e, index){
         let count = document.querySelectorAll('.it').length;
         let calc = 100/count;
@@ -27,7 +41,8 @@ class ViewProduct extends React.Component{
             <MyContext.Consumer>
                 {(content)=>(
                     <React.Fragment>
-                        <div>
+                        <div id="body">
+                            <div id="break"></div>
                             <div className="width-90 margin-auto">
                                 <div className="row">
                                     <LeftImages onClick={this.onClick} list={content.single(id).allImages} />

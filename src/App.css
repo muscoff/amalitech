@@ -211,17 +211,44 @@ input[type=text].discount{
   padding: 10px;
 }
 
-input[type=email].nav{
+input[type=email].nav, input[type=search].search{
   width: 100%;
   padding: 8px;
   font-family: "Gotham";
   border: none;
 }
 
-input[type=email]:focus.nav{
+input[type=email]:focus.nav, input[type=search]:focus.search{
   border: 1px solid lightblue;
 }
 
-button.join{
+button.join, button.search{
   padding: 8px 5px;
+}
+
+button.search{
+  background-color: rgb(48, 99, 158);
+  color: #fff;
+}
+
+.nav-item{
+  padding: 12px 6px;
+  font-family: "Gotham";
+  text-transform: uppercase;
+  color: rgb(75, 125, 182);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-item:hover{
+  background-color: rgb(72, 153, 207);
+  color: #fff;
+}
+
+.display-none{
+  display: none;
+}
+
+.display-block{
+  display: block;
 }

@@ -19,7 +19,11 @@ class MyProvider extends React.Component{
             discount: '',
             totalPrice: 0,
             totalQty: 0,
-            msg: ''
+            msg: '',
+            nav: ['new', 'men', 'women', 'boys', 'girls', 'more sizes', 'ties', 'sale', 'more'],
+            bottomNav: false,
+            search: '',
+            email: '',
         };
     }
 
@@ -37,7 +41,29 @@ class MyProvider extends React.Component{
     render(){
         return (
             <MyContext.Provider value={{
+                setSearchVisible: ()=>{
+                    setTimeout(()=>{
+                        let search = document.querySelector('#search');
+                        if(search.classList.contains('display-none')){
+                            search.classList.add('display-block');
+                            search.classList.remove('display-none');
+                        }else{
+                            search.classList.add('display-none');
+                            search.classList.remove('display-block');
+                        }
+                    });
+                },
+                email: this.state.email,
+                onChangeEmail: (event)=>{
+                    this.setState({email: event.target.value});
+                },
+                emailSubscription: ()=>{
+                    let email = this.state.email;
+                    alert(email);
+                },
+                bottomNav: this.state.bottomNav,
                 state: this.state.products,
+                nav: this.state.nav,
                 msg: this.state.msg,
                 single: (id)=>{
                     let item = this.state.products.filter(item=>item.id===id);
@@ -113,7 +139,6 @@ class MyProvider extends React.Component{
                     let state = this.state.cart;
                     let copy = state.slice();
                     copy.splice(index, 1);
-                    console.log(copy);
 
                     let totalPrice = 0;
                     let totalQty = 0;
@@ -168,6 +193,37 @@ class MyProvider extends React.Component{
                     totalPrice = (discount !== '' & discount.length === 5) ? totalPrice * 0.5 : totalPrice;
                     totalPrice = totalPrice.toFixed(2);
                     this.setState({cart, totalPrice, totalQty});
+                },
+                searchAction: ()=>{
+                    let val = this.state.search;
+                    alert(val);
+                },
+                onChangeSearch: (event)=>{
+                    this.setState({search: event.target.value});
+                },
+                navScroll: (event)=>{
+                    let nav = document.querySelector('#navBar');
+                    let bottomN = document.querySelector('#bottomNav');
+                    let first = document.querySelector('.first');
+                    let second = document.querySelector('.second');
+                    let height = nav.offsetHeight;
+                    let scrolled = window.pageYOffset;
+
+                    if(scrolled > height){
+                        nav.classList.remove('fixed');
+                        bottomN.classList.add('fixed');
+                        first.classList.add('display-none');
+                        first.classList.remove('display-block');
+                        second.classList.add('display-block');
+                        second.classList.remove('display-none');
+                    }else{
+                        nav.classList.add('fixed');
+                        bottomN.classList.remove('fixed');
+                        second.classList.add('display-none');
+                        second.classList.remove('display-block');
+                        first.classList.add('display-block');
+                        first.classList.remove('display-none');
+                    }
                 }
                 }}>
                 {this.props.children}

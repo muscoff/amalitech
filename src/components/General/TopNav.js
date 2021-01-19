@@ -12,6 +12,7 @@ export default class TopNav extends React.Component{
     componentDidMount(){
         this.ID = setInterval(()=>{
             this.getCartItems();
+            this.props.setUp();
         },200);
     }
 
@@ -40,7 +41,11 @@ export default class TopNav extends React.Component{
     }
 
     onChange(e){
-        this.props.onChange(e.target.value);
+        this.props.onChangeEmail(e);
+    }
+
+    emailSubscription(){
+        this.props.emailSubscription ? this.props.emailSubscription() : alert('No function passed');
     }
     render(){
         const {cart} = this.state;
@@ -57,7 +62,7 @@ export default class TopNav extends React.Component{
                                     <div className="col-8 underline">
                                         <input placeholder="Email Address" className="nav" onChange={(e)=>this.onChange(e)} type="email" value={this.props.email} />
                                     </div>
-                                    <div className="underline"><button className="join">JOIN</button></div>
+                                    <div className="underline"><button onClick={()=>this.emailSubscription()} className="join">JOIN</button></div>
                                 </div>
                             </div>
                         </div>
