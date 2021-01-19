@@ -1,38 +1,227 @@
-.App {
+.amali-blue{
+  color: rgb(0, 43, 92);
+}
+
+.amali-blueBg{
+  background-color: rgb(0, 43, 92);
+}
+
+.font-18{
+  font-size: 18px;
+}
+
+.font-13{
+  font-size: 13px;
+}
+
+.font-14{
+  font-size: 14px;
+}
+
+.padding-right-5{
+  padding-right: 5px;
+}
+
+.padding-bottom-5{
+  padding-bottom: 5px;
+}
+
+.underline{
+  border-bottom: 1px solid #ccc;
+}
+
+.underline-text:hover{
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.underline-text-blue:hover{
+  color: rgb(0, 43, 92);
+  border-bottom: 1px solid rgb(0, 43, 92);
+  cursor: pointer;
+}
+
+a.underline-blue{
+  color: rgb(0, 43, 92);
+}
+
+a.underline-blue:hover{
+  border-bottom: 1px solid rgb(0, 43, 92);
+}
+
+.grey-text{
+  color: rgb(97, 97, 97);
+}
+
+.light-grey-text{
+  color: rgb(141, 141, 141);
+}
+
+.light-grey-bg{
+  background-color: rgb(240, 240, 240);
+}
+
+.margin-bottom-5{
+  margin-bottom: 5px;
+}
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
+
+.margin-right-5{
+  margin-right: 5px;
+}
+
+button.join{
+  padding: 10px;
+  background-color: rgb(75, 123, 177);
+  color: #fff;
+  font-family: "Gotham";
+}
+
+input[type=email].email{
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: "Gotham";
+  border: 1px solid rgb(0, 43, 92);
+}
+
+.max-img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.max-img img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.visibility-hidden{
+  visibility: hidden;
+}
+
+.visibility-visible{
+  visibility: visible;
+}
+
+.img-item{
+  opacity: 0;
+  z-index: 0;
+}
+
+.img-item:hover{
+  opacity: 1;
+  z-index: 1;
+}
+
+.product{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.p-child{
+  z-index: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.p-item:hover .p-child{
+  z-index: 1;
+  opacity: 1;
+}
+
+.size-list{
+  width: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Gotham";
+  cursor: pointer;
+}
+
+.size-list:hover{
+  background-color: rgb(48, 99, 158);
+  color: #fff;
+}
+
+.size-list.active{
+  background-color: rgb(48, 99, 158);
+  color: #fff;
+}
+
+i:active{
+  transform: scale(0.85);
+}
+
+input[type=text].num, input[type=number].num{
+  width: 100%;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid rgb(0, 43, 92);
+  font-family: "Gotham";
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.addBtn{
+  padding: 12px;
+  font-family: "Gotham";
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(0, 43, 92);
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addBtn:active{
+  transform: scale(0.95);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.blue-border-1{
+  border: 1px solid rgb(0, 43, 92);
 }
 
-.App-link {
-  color: #61dafb;
+.font-10{
+  font-size: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card{
+  border-bottom: 0.1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.card:hover{
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+}
+
+input[type=text].discount{
+  font-family: "Gotham";
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+.discount-card{
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+input[type=email].nav{
+  width: 100%;
+  padding: 8px;
+  font-family: "Gotham";
+  border: none;
+}
+
+input[type=email]:focus.nav{
+  border: 1px solid lightblue;
+}
+
+button.join{
+  padding: 8px 5px;
 }
